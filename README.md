@@ -1,8 +1,8 @@
-# Blog 3 Pagination 
- 
-##Learning Competencies 
+# Blog 3 Pagination
 
-##Summary 
+## Learning Competencies
+
+## Summary
 
  We're going to learn about pagination.  Sometimes when there are large number of records to display, we'd rather have a user page through the records (restricting the number displayed per page) than have them scroll forever and ever.
 
@@ -29,11 +29,11 @@ Every page that displays a list of posts should be paginated: the list of all po
 
 The will_paginate gem adds methods to your `ActiveRecord` classes to support pagination.  Read through the will_paginate documentation to figure out how it works.
 
-Additionally, it comes with a view helper to display a nice list of page links for any paginated ActiveRecord object.  Use it! 
+Additionally, it comes with a view helper to display a nice list of page links for any paginated ActiveRecord object.  Use it!
 
-##Releases
-###Release 0 
+## Releases
+### Release 0
 
-##Optimize Your Learning 
+## Optimize Your Learning
 
-##Resources
+## Resources
