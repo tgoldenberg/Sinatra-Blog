@@ -2,9 +2,8 @@
 
 ## Learning Competencies
 
-* implement pagination and make changes at all stack levels to support it
-* How to incorporate third-party gems into a web application using bundler
-  (**VERY IMPORTANT**)
+* Implement a new feature and make changes across the MVC architecture to support the feature
+* Incorporate third-party gems into a web application using bundler
 
 ## Summary
 
@@ -12,6 +11,8 @@ We're going to learn about pagination.  Sometimes when there are large number
 of records to display, we'd rather have a user page through the records
 (restricting the number displayed per page) than have them scroll forever and
 ever.
+
+Start by copying your solution to [Blog 2](https://github.com/Devbootcamp/blog-2-multi-author-challenge) into the `source` directory. 
 
 ## Releases
 
@@ -27,7 +28,7 @@ gem 'will_paginate', '~> 3.0.0'
 Run `bundle install` to make sure the gem is installed.  If something goes
 wrong find a staff member.
 
-### Paginate Posts
+### Release 1 : Paginate Posts
 
 Every page that displays a list of posts should be paginated: the list of all
 posts, the list of posts for a given tag, and the list of posts by a given
