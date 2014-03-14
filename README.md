@@ -12,7 +12,7 @@ of records to display, we'd rather have a user page through the records
 (restricting the number displayed per page) than have them scroll forever and
 ever.
 
-Start by copying your solution to [Blog 2](https://github.com/Devbootcamp/blog-2-multi-author-challenge) into the `source` directory. 
+Start by copying your solution to [Blog 2](../../../blog-2-multi-author-challenge) into the `source` directory.
 
 ## Releases
 
