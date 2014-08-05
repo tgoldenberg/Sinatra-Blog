@@ -28,10 +28,10 @@ gem 'will_paginate', '~> 3.0.0'
 Run `bundle install` to make sure the gem is installed.  If something goes
 wrong find a staff member.
 
-### Release 1 : Paginate Posts
+### Release 1 : Paginate Entries
 
-Every page that displays a list of posts should be paginated: the list of all
-posts, the list of posts for a given tag, and the list of posts by a given
+Every page that displays a list of entries should be paginated: the list of all
+entries, the list of entries for a given tag, and the list of entries by a given
 author.
 
 The will\_paginate gem adds methods to your `ActiveRecord` classes to support
