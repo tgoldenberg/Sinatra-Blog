@@ -6,7 +6,9 @@ get '/posts/new' do
 end
 
 get '/posts/:id' do
+  @user = User.find(session[:user_id])
   @post = Post.find(params[:id])
+  @comments = @post.comments.all
   erb :'posts/show'
 end
 
