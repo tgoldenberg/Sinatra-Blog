@@ -1,0 +1,14 @@
+<div class="container">
+  <h4>Edit Comment</h4>
+  <form action="/comments/<%= @comment.id %>" method="post" class="form-horizontal">
+    <input type="hidden" value="put" name="_method">
+    <input type="hidden" name="comment[post_id]" value="<%= @comment.post.id %>">
+    <div class="form-group">
+      <input type="text" class="form-control" value="<%= @comment.body %>"placeholder="comment" name="comment[body]">
+    </div>
+    <div class="form-actions">
+      <input type="submit" class="btn btn-success">
+    </div>
+  </form>
+</div>
+
