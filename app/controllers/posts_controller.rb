@@ -11,7 +11,9 @@ get '/posts/:id' do
 end
 
 post '/posts' do
+  @user = User.find(session[:user_id])
   @post = Post.new params[:post]
+  @post.user_id = @user.id
   if @post.save
     redirect '/'
   else

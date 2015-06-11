@@ -24,12 +24,18 @@
     <h1>Blog Posts</h1>
     <span class="glyphicon glyphicon-cloud" style="font-size: 5em; color: blue;"></span>
   </div>
+  <a href="/posts/new"><button class="btn btn-primary btn-lg">Create a post</button></a>
   <div class="blog-posts-wrapper" style="text-align: left;">
+
     <% @posts.each_with_index do |post, idx| %>
       <div class="post-wrapper">
         <h2>Post #<%= idx + 1 %> <%= post.title.titleize %></h2>
         <h4>Written by: <%= post.user.username %></h4>
         <p> <%= post.body %></p>
+        <% if @user.id == post.user_id %>
+          <a href="/posts/edit"><button class="btn-succes">Edit</button></a>
+          <a href="/posts/<%= post.id %>" data-method="delete" data-confirm="Are you sure?"><button class="btn-succes">Delete</button></a>
+        <% end %>
         <hr />
         <% post.comments.each_with_index do |comment, index| %>
           <p class="comment" style="margin-left: 2em;"><b>Comment #<%= index + 1 %></b> <%= comment.body %></p>
