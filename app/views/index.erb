@@ -29,24 +29,22 @@
 
     <% @posts.each_with_index do |post, idx| %>
       <div class="post-wrapper">
-        <h2>Post #<%= idx + 1 %> <%= post.title.titleize %></h2>
+        <h2>Post #<%= idx + 1 %> <a href="/posts/<%= post.id %>"><%= post.title.titleize %></a></h2>
         <h4>Written by: <%= post.user.username %></h4>
         <p> <%= post.body %></p>
-        <% if @user.id == post.user_id %>
-          <a href="/posts/<%= post.id %>/edit"><button class="btn-success btn">Edit</button></a>
-          <form action="/posts/<%= post.id %>" method="post">
-            <div style="margin:0;padding:0">
-              <input name="_method" type="hidden" value="delete" />
-              <input type="submit" class="btn btn-default" value="Delete">
-            </div>
-          </form>
+        <p style="font-weight: 200; font-size: 12px;"> <%= post.created_at.strftime("%b %d %Y")%></p>
 
-        <% end %>
-        <hr />
-        <% post.comments.each_with_index do |comment, index| %>
-          <p class="comment" style="margin-left: 2em;"><b>Comment #<%= index + 1 %></b> <%= comment.body %></p>
-          <p class="comment" style="margin-left: 2em; font-weight: bold;"> <%= comment.user.username %></p>
-          <hr />
+        <% if @user.id == post.user_id %>
+          <div class="button-wrapper" style="display: flex;">
+            <a href="/posts/<%= post.id %>/edit"><button class="btn-success btn">Edit</button></a>
+            <form action="/posts/<%= post.id %>" method="post">
+              <div style="margin:0;padding:0">
+                <input name="_method" type="hidden" value="delete" />
+                <input type="submit" class="btn btn-default" value="Delete">
+              </div>
+            </form>
+          </div>
+
         <% end %>
       </div>
       <hr />
