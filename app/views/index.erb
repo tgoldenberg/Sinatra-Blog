@@ -15,9 +15,31 @@
   </div>
 
   <% elsif  session[:user_id]%>
-  <h1>You're in the BLOG</h1>
+  <nav style="text-align: left;">
     <p>Logged in as <%= @user.username %></p>
     <a href="/logout"><button class="btn btn-sm btn-default">Logout</button></a>
-
+  </nav>
+  <hr />
+  <div class="well">
+    <h1>Blog Posts</h1>
+    <span class="glyphicon glyphicon-cloud" style="font-size: 5em; color: blue;"></span>
+  </div>
+  <div class="blog-posts-wrapper" style="text-align: left;">
+    <% @posts.each_with_index do |post, idx| %>
+      <div class="post-wrapper">
+        <h2>Post #<%= idx + 1 %> <%= post.title.titleize %></h2>
+        <h4>Written by: <%= post.user.username %></h4>
+        <p> <%= post.body %></p>
+        <hr />
+        <% post.comments.each_with_index do |comment, index| %>
+          <p class="comment" style="margin-left: 2em;"><b>Comment #<%= index + 1 %></b> <%= comment.body %></p>
+          <p class="comment" style="margin-left: 2em; font-weight: bold;"> <%= comment.user.username %></p>
+          <hr />
+        <% end %>
+      </div>
+      <hr />
+    <% end %>
+  </div>
+  <hr />
   <% end %>
 </div>
