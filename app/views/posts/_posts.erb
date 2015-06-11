@@ -1,0 +1,31 @@
+<div class="well">
+    <h1>Blog Posts</h1>
+    <span class="glyphicon glyphicon-cloud" style="font-size: 5em; color: blue;"></span>
+  </div>
+  <a href="/posts/new"><button class="btn btn-primary btn-lg">Create a post</button></a>
+  <div class="blog-posts-wrapper" style="text-align: left;">
+
+    <% @posts.each_with_index do |post, idx| %>
+      <div class="post-wrapper">
+        <h2>Post #<%= idx + 1 %> <a href="/posts/<%= post.id %>"><%= post.title.titleize %></a></h2>
+        <h4>Written by: <%= post.user.username %></h4>
+        <p> <%= post.body %></p>
+        <p style="font-weight: 200; font-size: 12px;"> <%= post.created_at.strftime("%b %d %Y")%></p>
+
+        <% if @user.id == post.user_id %>
+          <div class="button-wrapper" style="display: flex;">
+            <a href="/posts/<%= post.id %>/edit"><button class="btn-success btn">Edit</button></a>
+            <form action="/posts/<%= post.id %>" method="post">
+              <div style="margin:0;padding:0">
+                <input name="_method" type="hidden" value="delete" />
+                <input type="submit" class="btn btn-default" value="Delete">
+              </div>
+            </form>
+          </div>
+
+        <% end %>
+      </div>
+      <hr />
+    <% end %>
+  </div>
+<hr />

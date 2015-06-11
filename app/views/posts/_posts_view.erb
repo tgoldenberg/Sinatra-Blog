@@ -1,0 +1,15 @@
+
+  <a href="/signup"><button class="btn btn-primary btn-lg">Create a post</button></a>
+  <div class="blog-posts-wrapper" style="text-align: left;">
+
+    <% @posts.each_with_index do |post, idx| %>
+      <div class="post-wrapper">
+        <h2>Post #<%= idx + 1 %> <a href="/signup"><%= post.title.titleize %></a></h2>
+        <h4>Written by: <%= post.user.username %></h4>
+        <p> <%= post.body %></p>
+        <p style="font-weight: 200; font-size: 12px;"> <%= post.created_at.strftime("%b %d %Y")%></p>
+      </div>
+      <hr />
+    <% end %>
+  </div>
+<hr />
