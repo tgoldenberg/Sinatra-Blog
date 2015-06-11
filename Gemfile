@@ -20,6 +20,8 @@ gem 'shotgun'
 gem 'faker'
 gem 'bcrypt'
 
+gem 'will_paginate'
+
 group :test do
   gem 'rspec'
 end

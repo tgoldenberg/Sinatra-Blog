@@ -20,4 +20,5 @@
   <hr />
     <%= erb :"posts/_posts", :locals => {:posts => @posts} %>
   <% end %>
+  <%= will_paginate @posts %>
 </div>
