@@ -10,19 +10,25 @@
       <h4><%= comment.user.username %></h4>
     </div>
     <p style="margin-left: 6em;"><%= comment.body %></p>
-      <% if @user.id == @post.user.id %>
-        <form action="/comments/<%= post.id %>" method="post">
+      <div class="button-wrapper" style="display: flex;">
+        <% if @user.id == @post.user.id || @user.id == comment.user_id %>
+        <form action="/comments/<%= comment.id %>" method="post">
           <div style="margin:0;padding:0">
             <input name="_method" type="hidden" value="delete" />
             <input type="submit" class="btn btn-default" value="Delete">
           </div>
         </form>
       <% end %>
+      <% if @user.id == comment.user_id %>
+        <a href="/comments/<%= comment.id %>/edit"><button class="btn btn-success">Edit</button></a>
+      <% end%>
+      </div>
     <hr />
   <% end %>
 
   <h4>New Comment</h4>
   <form action="/comments" method="post" class="form-horizontal">
+    <input type="hidden" name="comment[post_id]" value="<%= @post.id %>">
     <div class="form-group">
       <input type="text" class="form-control" placeholder="comment" name="comment[body]">
     </div>
