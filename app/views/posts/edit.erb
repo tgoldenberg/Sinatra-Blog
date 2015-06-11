@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Edit Post</h1>
+  <form action="/posts/<%= @post.id %>" method="post" value="" class="form-horizontal">
+    <input type="hidden" value="put" name="_method"/>
+    <div class="form-group">
+      <input type="text" class="form-control" value="<%= @post.title %>" placeholder="title" name="post[title]">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" value="<%= @post.body %>"placeholder="body" name="post[body]">
+    </div>
+    <div class="form-actions">
+      <input type="submit" class="btn btn-success">
+    </div>
+  </form>
+</div>

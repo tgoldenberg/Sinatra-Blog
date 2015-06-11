@@ -1,0 +1,24 @@
+<div class="container">
+  <% if !session[:user_id] %>
+  <div class="span glyphicon glyphicon-ok-circle" style="font-size: 4em; color: green;"></div>
+  <div class="well">
+    <h1>Welcome to our BEAUTIFUL BLOG</h1>
+    <h4>Sign up to create a post</h4>
+    <a href="/signup"><button class="btn btn-lg btn-success">
+      Signup
+    </button></a>
+    <a href="/login"><button class="btn btn-lg btn-success">
+      Login
+    </button></a>
+    <br/>
+    <br/>
+  </div>
+  <%= erb :"posts/_posts_view", :locals => {:posts => @posts} %>
+
+
+  <% elsif  session[:user_id]%>
+  <hr />
+    <%= erb :"posts/_posts", :locals => {:posts => @posts} %>
+  <% end %>
+  <%= will_paginate @posts %>
+</div>
