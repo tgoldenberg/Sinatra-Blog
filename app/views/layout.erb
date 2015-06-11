@@ -21,6 +21,18 @@
   <title></title>
 </head>
 <body>
+  <nav class="top-nav" style="position: relative;">
+    <a href="/" style="float: left;"><span class="glyphicon glyphicon-home"></span></a>
+    <% if session[:user_id] %>
+      <p style="float: right;">Logged in as <%= @user.username %></p>
+      <a href="/logout" style="float: right; margin-right: 1em;"><button class="btn btn-sm btn-default">Logout</button></a>
+      <div style="clear: both;"></div>
+    <% end %>
+  </nav>
+  </nav>
   <%= yield %>
 </body>
+<footer>
+
+</footer>
 </html>

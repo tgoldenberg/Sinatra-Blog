@@ -9,3 +9,13 @@ th {
 .glyphicon {
   font-size: 3em;
 }
+nav.top-nav {
+  height: 60px;
+  background: #f7f7f7;
+  padding: .8em;
+}
+.glyphicon-home {
+  margin-left: 1em;
+  margin-top: -3px;
+  color: black;
+}
