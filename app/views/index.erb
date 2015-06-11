@@ -34,7 +34,13 @@
         <p> <%= post.body %></p>
         <% if @user.id == post.user_id %>
           <a href="/posts/<%= post.id %>/edit"><button class="btn-success btn">Edit</button></a>
-          <a href="/posts/<%= post.id %>" data-method="delete" data-confirm="Are you sure?"><button class="btn-default btn">Delete</button></a>
+          <form action="/posts/<%= post.id %>" method="post">
+            <div style="margin:0;padding:0">
+              <input name="_method" type="hidden" value="delete" />
+              <input type="submit" class="btn btn-default" value="Delete">
+            </div>
+          </form>
+
         <% end %>
         <hr />
         <% post.comments.each_with_index do |comment, index| %>
