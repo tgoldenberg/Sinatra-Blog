@@ -1,5 +1,3 @@
-
-
 get '/posts/new' do
   @post = Post.new
   erb :'posts/new'
@@ -8,7 +6,7 @@ end
 get '/posts/:id' do
   @user = User.find(session[:user_id])
   @post = Post.find(params[:id])
-  @comments = @post.comments.all
+  @comments = @post.comments.all.order(:id)
   erb :'posts/show'
 end
 
@@ -19,9 +17,9 @@ post '/posts' do
   if @post.save
     redirect '/'
   else
+    redirect back
   end
 end
-
 
 get '/posts/:id/edit' do
   @post = Post.find(params[:id])
