@@ -33,8 +33,8 @@
         <h4>Written by: <%= post.user.username %></h4>
         <p> <%= post.body %></p>
         <% if @user.id == post.user_id %>
-          <a href="/posts/edit"><button class="btn-succes">Edit</button></a>
-          <a href="/posts/<%= post.id %>" data-method="delete" data-confirm="Are you sure?"><button class="btn-succes">Delete</button></a>
+          <a href="/posts/<%= post.id %>/edit"><button class="btn-success btn">Edit</button></a>
+          <a href="/posts/<%= post.id %>" data-method="delete" data-confirm="Are you sure?"><button class="btn-default btn">Delete</button></a>
         <% end %>
         <hr />
         <% post.comments.each_with_index do |comment, index| %>

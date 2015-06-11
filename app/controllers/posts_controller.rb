@@ -20,19 +20,16 @@ post '/posts' do
   end
 end
 
-get '/posts/:id/short_url' do
-  @post = Post.find(params[:id])
-  @post.save
-
-end
 
 get '/posts/:id/edit' do
   @post = Post.find(params[:id])
+  erb :'posts/edit'
 end
 
 put '/posts/:id' do
   @post = Post.find(params[:id])
-  erb :'posts/show'
+  @post.update_attributes(params[:post])
+  redirect '/'
 end
 
 get '/posts/index' do
