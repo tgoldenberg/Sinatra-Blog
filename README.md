@@ -1,5 +1,4 @@
-#Sinatra Bittly Clone
+#Sinatra Blog App 
 
-Sinatra app using Bootstrap to create shortened urls and link to the url websites
-
-![screenshot](https://raw.githubusercontent.com/tgoldenberg/bittly-clone/master/bittly.png)
+Simple Blog app with users, authentication from scratch, posts, and comments. 
+Users can create comments or posts, and have access privileges for deleting and editing them.
