@@ -1,0 +1,11 @@
+<div class="well" style="text-align:center; min-height: 20em; padding-top: 5em; width: 90%; margin: auto; margin-top: 2em;">
+  <% if @message %>
+    <h4 style="color: red;"><%= @message %>: Try again!</h4>
+  <% end %>
+  <h1>Create a new url!</h1>
+  <form action="/urls" method="post" >
+    <input type="text" placeholder="full url" name="url[url]"/>
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </form>
+</div>
+
